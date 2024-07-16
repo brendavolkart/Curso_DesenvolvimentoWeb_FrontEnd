@@ -1,4 +1,4 @@
-const idade = 9;
+const idade = 9;yhyhz
 const nome = 'Paulo';
 let podeEntrar = false; 
 
