@@ -9,9 +9,9 @@ function numerosImpares(valor){
             console.log(novoValor);
             contar++;
         }
-        
+
         novoValor++
     }
 }
 
-numerosImpares(2)
+numerosImpares(8)
