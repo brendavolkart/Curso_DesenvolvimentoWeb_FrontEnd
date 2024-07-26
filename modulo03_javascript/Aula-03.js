@@ -33,3 +33,4 @@ teste4();
 
 
 // SetTimeout recebe uma função e executa ela depois de X tempo em milésimo de segundos.
+// FUNCIONALIDADE ASSINCRONIDADE
