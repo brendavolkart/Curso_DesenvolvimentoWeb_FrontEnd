@@ -1,5 +1,5 @@
 // USANDO O MÉTODO REDUCE C/ ARRAY
-//Podemos converter o array em um objeto
+//Por exemplo: Podemos converter o array em um objeto
 
 const lista = [
     {
