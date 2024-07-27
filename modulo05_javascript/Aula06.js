@@ -7,14 +7,14 @@ class Produto {
     preco;
     descricao;
     codigo;
-    quantidade_em_estoque;
+    quantidadeEstoque;
 
-    constructor(nome, preco, descricao, codigo, quantidade_em_estoque) {
+    constructor(nome, preco, descricao, codigo, quantidadeEstoque) {
         this.nome = nome
         this.preco = preco;
         this.descricao = descricao;
         this.codigo = codigo;
-        this.quantidade_em_estoque = quantidade_em_estoque;
+        this.quantidadeEstoque = quantidadeEstoque;
     }
 
     alterarPreco(preco) {
@@ -24,18 +24,18 @@ class Produto {
         return this.preco = preco;
     }
 
-    aumentarEstoque(quantidade_em_estoque) {
-        if (quantidade_em_estoque <= 0) {
-            throw new TypeError("ESTOQUE NÃO PODE ESTAR VAZIO!")
+    aumentarEstoque(novoValorEstoque) {
+        if (novoValorEstoque <= 0) {
+            throw new TypeError("A quantidade deve ser maior do que zero")
         }
-        return this.quantidade_em_estoque = quantidade_em_estoque;
+        return this.quantidadeEstoque += novoValorEstoque;
     }
 
-    diminuirEstoque(quantidade_em_estoque) {
-        if (quantidade_em_estoque <= 0) {
+    diminuirEstoque(novoValorEstoque) {
+        if (this.quantidadeEstoque - novoValorEstoque <= 0) {
             throw new TypeError("ESTOQUE NÃO PODE ESTAR VAZIO!")
         }
-        this.quantidade_em_estoque = quantidade_em_estoque;
+        this.quantidadeEstoque -= novoValorEstoque;
     }
 }
 
@@ -44,8 +44,8 @@ class Smartphone extends Produto {
     modelo;
     sistemaOperacional;
 
-    constructor(nome, preco, descricao, codigo, quantidade_em_estoque, marca, modelo, sistemaOperacional) {
-        super(nome, preco, descricao, codigo, quantidade_em_estoque);
+    constructor(nome, preco, descricao, codigo, quantidadeEstoque, marca, modelo, sistemaOperacional) {
+        super(nome, preco, descricao, codigo, quantidadeEstoque);
         this.marca = marca;
         this.modelo = modelo;
         this.sistemaOperacional = sistemaOperacional;
@@ -63,21 +63,22 @@ const produto = new Produto("celular", 1200, "telefone celular", "1234", 2);
 
 //FUNÇÃO QUE ATUALIZA O PREÇO
 //---------------------------
-// produto.alterarPreco(-1)
-// console.log(produto.preco)
+// console.log(produto)
+// produto.alterarPreco(100)
+// console.log(produto)
 //---------------------------
 
 
 //FUNÇÃO QUE AUMENTA A QNTD EM ESTOQUE
 //------------------------------------
 // console.log(produto)
-// produto.diminuirEstoque(0)
-// console.log(produto.quantidade_em_estoque)
+// produto.diminuirEstoque(2)
+// console.log(produto)
 //------------------------------------
 
 
 //FUNÇÃO QUE MOSTRA AS ESPECIFICAÇÕES DO SMARTPHONE
 //------------------------------------
-smartphone.descricaoSmartphone(smartphone)
+// smartphone.descricaoSmartphone(smartphone)
 //------------------------------------
 
